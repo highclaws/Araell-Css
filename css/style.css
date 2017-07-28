@@ -1,0 +1,121 @@
+.nav {
+    font-family: sans-serif;
+    width: 240px;
+    background: #495563;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    display: block;
+}
+
+.grid {
+    margin-left: 240px;
+    width: 80%;
+    height: 100%;
+}
+
+.nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 60px;
+    bottom: 60px;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    overflow: auto;
+}
+
+.nav ul li {
+    box-shadow: inset 0, 1px, 0, #566473;
+    height: 59px;
+    border-bottom: 1px solid #3f4955;
+    color: ;
+    font-size: 16px;
+    position: relative;
+}
+
+header {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .3);
+    background: #3f4955;
+    height: 40px;
+    padding: 10px;
+    text-align: center;
+}
+
+.couleur1 {
+    padding: 1.25rem 2.5rem 1.25rem 1.5rem;
+    padding-right: 2.5rem;
+    padding-left: 1.5rem;
+    background-color: #3273dc;
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+}
+
+.couleur2 {
+    padding: 1.25rem 2.5rem 1.25rem 1.5rem;
+    padding-right: 2.5rem;
+    padding-left: 1.5rem;
+    background-color: #ffdd57;
+}
+
+.couleur3 {
+    padding: 1.25rem 2.5rem 1.25rem 1.5rem;
+    padding-right: 2.5rem;
+    padding-left: 1.5rem;
+    background-color: #23d160;
+}
+
+.highlight {
+    background-color: #f5f5f5;
+    color: #586e75;
+    font-size: 13px;
+}
+
+pre code {
+    -webkit-overflow-scrolling: touch;
+    background: none;
+    color: inherit;
+    display: block;
+    font-size: 1em;
+    overflow-x: auto;
+    padding: 1.25rem 1.5rem;
+}
+
+code {
+    background-color: whitesmoke;
+    color: #ff3860;
+    font-size: 0.8em;
+    font-weight: normal;
+    padding: 0.25em 0.5em 0.25em;
+}
+
+#test2 {
+    display: none;
+}
+
+#test3 {
+    display: none;
+}
+
+#test4 {
+    display: none;
+}
+
+.logo {
+    background-image: url("http://nicolasgallagher.com/flexible-css-cover-images/cover.20df6b4f49171f6f3947064e3a92317d.jpg");
+    width: 50px;
+    background-size: cover;
+    margin-left: 35%;
+}
+
+#test1 {
+    background-image: url("http://nicolasgallagher.com/flexible-css-cover-images/cover.20df6b4f49171f6f3947064e3a92317d.jpg");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}

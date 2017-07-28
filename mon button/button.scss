@@ -1,0 +1,366 @@
+/* variable couleur */
+
+$purple: #9A68C7;
+$black: #000000;
+$blue: #3BA9E4;
+$green: #75B343;
+$orange: #FF6A42;
+$off-wht: rgba(white, .4);
+$red: #f44336;
+$white: white;
+
+/* mixin */
+
+@mixin trans($val) {
+    -webkit-transition: $val;
+    -moz-transition: $val;
+    -o-transition: $val;
+    transition: $val;
+}
+
+@mixin btn-theme($btn-color) {
+    border-color: darken($btn-color, 40%);
+    background-color: $btn-color;
+}
+
+@mixin btn-hover($btn-color) {
+    border-color: darken($btn-color, 20%);
+    &:hover {
+        color: $white;
+    }
+    &:active {
+        box-shadow: 0 .063em $off-wht, inset 0 0 1.094em darken($btn-color, 40%), inset 0 .063em darken($btn-color, 20%), inset 0 -0.188em darken($btn-color, 20%);
+    }
+}
+
+
+/* class */
+
+
+/*  config taille boutton */
+
+.button-config {
+    font-size: 18px;
+    width: 120px;
+    margin: 1px;
+    padding: 6px;
+    border-radius: 3px;
+    @include trans(0.2s ease-in-out);
+    height: 42px;
+    display: block;
+    text-align: center;
+    border: none;
+    box-shadow: none;
+    cursor: default;
+}
+
+.bordure {
+    background: rgba( 155, 0, 0, 0);
+    @extend .button-config;
+    @include trans(0.2s ease-in-out);
+    &:hover {
+        color: black;
+    }
+}
+
+.button {
+    @extend .button-config;
+    @include trans(0.2s ease-in-out);
+}
+
+.button-cercle {
+    @extend .button;
+    width: 100px;
+    height: 100px;
+    padding-top: 35px;
+    margin: 11px;
+    border-radius: 50%;
+}
+
+.button-pilule {
+    @extend .button;
+    border-radius: 50px;
+}
+
+
+/* config bordure couleur*/
+
+.orange {
+    @extend .bordure;
+    border: 2px solid $orange;
+}
+
+.green {
+    @extend .bordure;
+    border: 2px solid $green;
+    /* Green */
+}
+
+.red {
+    @extend .bordure;
+    border: 2px solid $red;
+}
+
+.blue {
+    @extend .bordure;
+    border: 2px solid $blue;
+}
+
+.black {
+    @extend .bordure;
+    border: 2px solid $black;
+}
+
+.purple {
+    @extend .bordure;
+    border: 2px solid $purple;
+}
+
+
+/* config transparent */
+
+.transparent {
+    &-purple {
+        @extend .bordure;
+        background-color: rgba(128, 0, 128, 0.1);
+        color: $red;
+        border: 2px solid $purple;
+        &:hover {
+            color: $white;
+            background-color: $purple;
+        }
+    }
+    &-red {
+        @extend .bordure;
+        background-color: rgba(128, 0, 128, 0.1);
+        color: $red;
+        border: 2px solid $purple;
+        &:hover {
+            color: $white;
+            background-color: $red;
+        }
+    }
+    &-blue {
+        @extend .bordure;
+        background-color: rgba(158, 197, 255, 0.1);
+        color: $red;
+        border: 2px solid $blue;
+        &:hover {
+            color: $white;
+            background-color: $blue;
+        }
+    }
+    &-green {
+        @extend .bordure;
+        background-color: rgba(149, 255, 133, 0.1);
+        color: $red;
+        border: 2px solid $green;
+        &:hover {
+            color: $white;
+            background-color: $green;
+        }
+    }
+    &-orange {
+        @extend .bordure;
+        background-color: rgba(255, 204, 153, 0.1);
+        color: $red;
+        border: 2px solid $orange;
+        &:hover {
+            color: $white;
+            background-color: $orange;
+        }
+    }
+    &-black {
+        @extend .bordure;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: $red;
+        border: 2px solid $black;
+        &:hover {
+            color: $white;
+            background-color: $black;
+        }
+    }
+    &-red {
+        @extend .bordure;
+        background-color: rgba(244, 67, 54, 0.2);
+        color: $red;
+        border: 2px solid $purple;
+        &:hover {
+            color: $white;
+            background-color: $red;
+        }
+    }
+}
+
+
+/* boutton  normal*/
+
+.btn {
+    &-black {
+        color: $white;
+        @extend .button;
+        @include btn-theme($black);
+        @include btn-hover($black);
+    }
+    &-purple {
+        @extend .button;
+        @include btn-theme($purple);
+        @include btn-hover($purple);
+    }
+    &-blue {
+        @extend .button;
+        @include btn-theme($blue);
+        @include btn-hover($blue);
+    }
+    &-green {
+        @extend .button;
+        @include btn-theme($green);
+        @include btn-hover($green);
+    }
+    &-orange {
+        @extend .button;
+        @include btn-theme($orange);
+        @include btn-hover($orange);
+    }
+    &-red {
+        @extend .red;
+        @include btn-theme($red);
+        @include btn-hover($red);
+    }
+}
+
+
+/* boutton cercle  normal*/
+
+.btn {
+    &-black-c {
+        color: $white;
+        @extend .button-cercle;
+        @include btn-theme($black);
+        @include btn-hover($black);
+    }
+    &-purple-c {
+        @extend .button-cercle;
+        @include btn-theme($purple);
+        @include btn-hover($purple);
+    }
+    &-blue-c {
+        @extend .button-cercle;
+        @include btn-theme($blue);
+        @include btn-hover($blue);
+    }
+    &-green-c {
+        @extend .button-cercle;
+        @include btn-theme($green);
+        @include btn-hover($green);
+    }
+    &-orange-c {
+        @extend .button-cercle;
+        @include btn-theme($orange);
+        @include btn-hover($orange);
+    }
+    &-red-c {
+        @extend .red;
+        @extend .button-cercle;
+        @include btn-theme($red);
+        @include btn-hover($red);
+    }
+}
+
+
+/* boutton pilule*/
+
+.btn {
+    &-black-pilule {
+        color: $white;
+        @extend .button-pilule;
+        @include btn-theme($black);
+        @include btn-hover($black);
+    }
+    &-purple-pilule {
+        @extend .button-pilule;
+        @include btn-theme($purple);
+        @include btn-hover($purple);
+    }
+    &-blue-pilule {
+        @extend .button-pilule;
+        @include btn-theme($blue);
+        @include btn-hover($blue);
+    }
+    &-green-pilule {
+        @extend .button-pilule;
+        @include btn-theme($green);
+        @include btn-hover($green);
+    }
+    &-orange-pilule {
+        @extend .button-pilule;
+        @include btn-theme($orange);
+        @include btn-hover($orange);
+    }
+    &-red-pilule {
+        @extend .button-pilule;
+        @extend .red;
+        @include btn-theme($red);
+        @include btn-hover($red);
+    }
+}
+
+
+/* boutton border normal*/
+
+.btn {
+    &-black-border {
+        @extend .black;
+        @include btn-hover($black);
+    }
+    &-purple-border {
+        @extend .purple;
+        @include btn-hover($purple);
+    }
+    &-blue-border {
+        @extend .blue;
+        @include btn-hover($blue);
+    }
+    &-green-border {
+        @extend .green;
+        @include btn-hover($green);
+    }
+    &-orange-border {
+        @extend .orange;
+        @include btn-hover($orange);
+    }
+    &-red-border {
+        @extend .red;
+        @include btn-hover($red);
+    }
+}
+
+
+/* transparent border button */
+
+.btn-transparent {
+    &-purple-border {
+        @extend .transparent-purple;
+        @include btn-hover($purple);
+    }
+    &-blue-border {
+        @extend .transparent-blue;
+        @include btn-hover($blue);
+    }
+    &-green-border {
+        @extend .transparent-green;
+        @include btn-hover($green);
+    }
+    &-orange-border {
+        @extend .transparent-orange;
+        @include btn-hover($orange);
+    }
+    &-black-border {
+        @extend .transparent-black;
+        @include btn-hover($black);
+    }
+    &-red-border {
+        @extend .transparent-red;
+        @include btn-hover($red);
+    }
+}

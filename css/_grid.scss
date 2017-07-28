@@ -1,0 +1,150 @@
+/*-----------------------------*\
+Les grilles 
+\*-----------------------------*/
+
+
+/*-----------------------------*\
+$variables
+\*-----------------------------*/
+
+$columns: 12!default;
+$gutter: 20px!default;
+$mobile:320px;
+$tablette:768px;
+$medium:992px;
+$large:1200px;
+
+/*-----------------------------*\
+$Mixins
+\*-----------------------------*/
+
+@mixin responsive-columns($suffix: '') {
+    @for $i from 0 through $columns {
+        @if $i !=0 {
+            .col#{$suffix}-#{$i} {
+                width: $i / $columns * 100%;
+            }
+        }
+        .col#{$suffix}-center {
+            margin: 0 auto;
+            float: none;
+        }
+        .col#{$suffix}-push-#{$i} {
+            left: $i / $columns * 100%;
+        }
+        .col#{$suffix}-pull-#{$i} {
+            left: $i / $columns * 100%;
+        }
+        .col#{$suffix}-offset-#{$i} {
+            margin-left: $i / $columns * 100%;
+        }
+    }
+}
+
+
+/*-----------------------------*\
+$Extends
+\*-----------------------------*/
+
+%col {
+    min-height: 88.35px;
+    float: left;
+    position: relative;
+    display: block;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 0.65rem;
+}
+
+
+/*-----------------------------*\
+$Class
+\*-----------------------------*/
+
+.row {
+    margin: 0 $gutter * 0.1;
+    @include clearfix;
+}
+
+
+/*-----------------------------*\
+$Grid boucle
+\*-----------------------------*/
+
+@for $i from 1 through $columns {
+    .col-#{$i},
+    .col-s-#{$i},
+    .col-t-#{$i},
+    .col-m-#{$i},
+    .col-l-#{$i} {
+        @extend %col;
+    }
+}
+
+@include responsive-columns();
+
+/*-----------------------------*\
+$Grid responsive
+\*-----------------------------*/
+
+@media only screen and (min-width: $mobile) {
+    .col-s-center {
+        margin: 0 auto;
+        float: none;
+    }
+    .s-hide {
+        display: none;
+    }
+    .s-show {
+        display: block;
+    }
+    @include responsive-columns('-s')
+}
+
+@media only screen and (min-width: $tablette) {
+    .col-t-center {
+        margin: 0 auto;
+        float: none;
+    }
+    .t-hide {
+        display: none;
+    }
+    .t-show {
+        display: block;
+    }
+    @include responsive-columns('-t')
+}
+
+@media only screen and (min-width: $medium) {
+    .col-m-center {
+        margin: 0 auto;
+        float: none;
+    }
+    .m-hide {
+        display: none;
+    }
+    .m-show {
+        display: block;
+    }
+    @include responsive-columns('-m')
+}
+
+@media only screen and (min-width: $large) {
+    .col-l-center {
+        margin: 0 auto;
+        float: none;
+    }
+    .l-hide {
+        display: none;
+    }
+    .l-show {
+        display: block;
+    }
+    @include responsive-columns('-l')
+}
+
+.col-center {
+    margin: 0 auto;
+    float: none;
+}

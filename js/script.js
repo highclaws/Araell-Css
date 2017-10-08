@@ -30,6 +30,8 @@ $(document).ready(function() {
         $("#test2").hide();
         $("#test3").hide();
         $("#test5").hide();
+        console.log("c'est good");
+
 
     });
     $("#5").click(function() {
